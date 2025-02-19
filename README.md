@@ -1,4 +1,4 @@
-# Over Woo en OpenWoo.app
+# Over Woo en OpenWoo.app (deprecated REPO)
 
 Ondersteuning en bijeenkomsten
 
