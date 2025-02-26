@@ -1,0 +1,13 @@
+name: Trigger Call API
+
+on:
+  schedule:
+    - cron: '*/5 * * * *'
+
+jobs:
+  trigger_api:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Call
+        run: |
+          curl -X POST -u "${{ secrets.INLOG }}:${{ secrets.WACHTWOORD }}" "https://${{ secrets.DOMEINNAAM }}/index.php/apps/${{ secrets.APP}}${{ secrets.ENDPOINT }}"
