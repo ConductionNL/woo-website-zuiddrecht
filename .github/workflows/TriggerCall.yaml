@@ -3,6 +3,7 @@ name: Trigger Call API
 on:
   schedule:
     - cron: '*/5 * * * *'
+  workflow_dispatch:
 
 jobs:
   trigger_api:
