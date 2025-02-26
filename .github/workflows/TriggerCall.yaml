@@ -7,7 +7,14 @@ on:
 jobs:
   trigger_api:
     runs-on: ubuntu-latest
+    env:
+      DOMEINNAAM: ${{ secrets.DOMEINNAAM }}
+      INLOG: ${{ secrets.INLOG }}
+      WACHTWOORD: ${{ secrets.WACHTWOORD }}
+      APP: ${{ secrets.APP }}
+      ENDPOINT: ${{ secrets.ENDPOINT }}
     steps:
       - name: Trigger Call
         run: |
-          curl -X POST -u "${{ secrets.INLOG }}:${{ secrets.WACHTWOORD }}" "https://${{ secrets.DOMEINNAAM }}/index.php/apps/${{ secrets.APP}}${{ secrets.ENDPOINT }}"
+          echo "Triggering API call at: https://${DOMEINNAAM}/index.php/apps/${APP}${ENDPOINT}"
+          curl -X POST -u "${INLOG}:${WACHTWOORD}" "https://${DOMEINNAAM}/index.php/apps/${APP}${ENDPOINT}"
